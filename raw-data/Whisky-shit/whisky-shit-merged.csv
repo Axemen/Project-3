@@ -2623,7 +2623,7 @@ age,vintage,bottled,avp,size,price,name,bottling,bottler,loc/type,country
 46.0,1958.0,2004.0,43.00%,700,1586.19,Glen Garioch,"Original Bottling, Highlands Single Malt",Original Bottling,Highlands,UK
 26.0,1990.0,2016.0,54.40%,700,168.72000000000003,Glen Garioch,"Signatory Vintage, Highlands Single Malt",Signatory Vintage,Highlands,UK
 13.0,1993.0,2006.0,46.00%,700,91.02,Glen Garioch,"Murray McDavid, Highlands Single Malt",Murray McDavid,Highlands,UK
-15.0,1974.0,1989.0,40.00%,750,226.44000000000003,Glen Gordon (1980s),"Original Bottling,  Single Malt",Original Bottling,Single,u
+15.0,1974.0,1989.0,40.00%,750,226.44000000000003,Glen Gordon (1980s),"Original Bottling,  Single Malt",Original Bottling,Single,UK
 ,1957.0,,40.00%,700,883.5600000000002,Glen Grant,"Gordon & MacPhail, Speyside Single Malt",Gordon & MacPhail,Speyside,UK
 48.0,1958.0,2006.0,40.00%,700,798.09,Glen Grant,"Gordon & MacPhail, Speyside Single Malt",Gordon & MacPhail,Speyside,UK
 22.0,1961.0,1983.0,45.00%,750,469.53,Glen Grant,"Original Bottling, Speyside Single Malt",Original Bottling,Speyside,UK
@@ -3201,7 +3201,7 @@ age,vintage,bottled,avp,size,price,name,bottling,bottler,loc/type,country
 30.0,1984.0,2014.0,51.00%,700,309.69000000000005,Glenesk Cooper´s Choice,"The Vintage Malt Whisky Co Ltd., Highlands Single Malt",The Vintage Malt Whisky Co Ltd.,Highlands,UK
 29.0,1968.0,1997.0,54.40%,700,904.65,Glen Garioch Single Cask,"Original Bottling, Highlands Single Malt",Original Bottling,Highlands,UK
 23.0,1992.0,2015.0,60.10%,700,173.16000000000003,Glen Garioch Raw Cask,"Blackadder, Highlands Single Malt",Blackadder,Highlands,UK
-23.0,1957.0,1980.0,40.00%,750,658.23,Glen Gordon,"Gordon & MacPhail,  Single Malt",Gordon & MacPhail,Single,u
+23.0,1957.0,1980.0,40.00%,750,658.23,Glen Gordon,"Gordon & MacPhail,  Single Malt",Gordon & MacPhail,Single,UK
 31.0,1949.0,1980.0,40.00%,750,1025.64,Glen Grant (Crystal Decanter),"Gordon & MacPhail, Speyside Single Malt",Gordon & MacPhail,Speyside,UK
 ,1952.0,,40.00%,750,651.57,Glen Grant,"Gordon & MacPhail, Speyside Single Malt",Gordon & MacPhail,Speyside,UK
 53.0,1957.0,2010.0,40.00%,700,850.2600000000001,Glen Grant,"Gordon & MacPhail, Speyside Single Malt",Gordon & MacPhail,Speyside,UK
@@ -3658,7 +3658,7 @@ age,vintage,bottled,avp,size,price,name,bottling,bottler,loc/type,country
 14.0,2003.0,2017.0,55.10%,700,93.24,Bowmore Small Batch,"Cadenhead, Islay Single Malt",Cadenhead,Islay,UK
 15.0,1979.0,1994.0,43.00%,50,29.97,Braes of Glenlivet,"Signatory Vintage, Speyside Single Malt",Signatory Vintage,Speyside,UK
 25.0,1989.0,2014.0,46.00%,700,115.44,Braes of Glenlivet,"Morrison and MacKay, Speyside Single Malt",Morrison and MacKay,Speyside,UK
-10.0,2006.0,2016.0,57.90%,700,91.02,Breath of Speyside,"Adelphi,  Single Malt",Adelphi,Single,u
+10.0,2006.0,2016.0,57.90%,700,91.02,Breath of Speyside,"Adelphi,  Single Malt",Adelphi,Single,UK
 21.0,1977.0,1998.0,56.90%,700,805.8600000000001,Brora Rare Malts,"Original Bottling, Highlands Single Malt",Original Bottling,Highlands,UK
 19.0,1981.0,2000.0,60.40%,700,695.97,Brora,"The Bottlers, Highlands Single Malt",The Bottlers,Highlands,UK
 33.0,1982.0,2015.0,46.00%,700,816.96,Brora Rare Old,"Gordon & MacPhail, Highlands Single Malt",Gordon & MacPhail,Highlands,UK
@@ -4263,7 +4263,7 @@ age,vintage,bottled,avp,size,price,name,bottling,bottler,loc/type,country
 19.0,1981.0,2000.0,46.00%,700,229.77,Coleburn,"Signatory Vintage, Speyside Single Malt",Signatory Vintage,Speyside,UK
 20.0,1964.0,1984.0,46.00%,750,518.37,Edradour,"Cadenhead, Highlands Single Malt",Cadenhead,Highlands,UK
 10.0,1992.0,2002.0,46.00%,700,62.16,Edradour The Un-Chillfiltered Collection,"Signatory Vintage, Highlands Single Malt",Signatory Vintage,Highlands,UK
-48.0,1957.0,2005.0,40.00%,700,555.0,Glen Gordon,"Gordon & MacPhail,  Single Malt",Gordon & MacPhail,Single,u
+48.0,1957.0,2005.0,40.00%,700,555.0,Glen Gordon,"Gordon & MacPhail,  Single Malt",Gordon & MacPhail,Single,UK
 14.0,1989.0,2003.0,55.30%,500,112.11,Glen Grant Cask Strength,"Original Bottling, Speyside Single Malt",Original Bottling,Speyside,UK
 21.0,1979.0,2000.0,40.00%,700,157.62,Glen Mhor,"Original Bottling, Highlands Single Malt",Original Bottling,Highlands,UK
 14.0,1995.0,2009.0,60.70%,700,105.45,Glen Moray Distillery Selection,"Original Bottling, Speyside Single Malt",Original Bottling,Speyside,UK
@@ -4952,7 +4952,7 @@ age,vintage,bottled,avp,size,price,name,bottling,bottler,loc/type,country
 26.0,1980.0,2006.0,47.80%,700,130.98000000000002,Glen Elgin,"Scots Whisky-Forum, Speyside Single Malt",Scots Whisky-Forum,Speyside,UK
 23.0,1967.0,1990.0,43.00%,700,2757.24,Glen Garioch,"Original Bottling, Highlands Single Malt",Original Bottling,Highlands,UK
 36.0,1967.0,2003.0,55.50%,700,598.2900000000002,Glen Garioch Old & Rare,"Douglas Laing, Highlands Single Malt",Douglas Laing,Highlands,UK
-15.0,1974.0,1989.0,40.00%,750,273.06,Glen Gordon,"Antica Casa Marchesi Spinola,  Single Malt",Antica Casa Marchesi Spinola,Single,u
+15.0,1974.0,1989.0,40.00%,750,273.06,Glen Gordon,"Antica Casa Marchesi Spinola,  Single Malt",Antica Casa Marchesi Spinola,Single,UK
 17.0,1997.0,2014.0,46.00%,700,74.37,Glen Grant,"Maltman, Speyside Single Malt",Maltman,Speyside,UK
 ,1936.0,,40.00%,750,1950.27,Glen Grant,"Gordon & MacPhail, Speyside Single Malt",Gordon & MacPhail,Speyside,UK
 30.0,1950.0,1980.0,40.00%,750,966.81,Glen Grant,"Gordon & MacPhail, Speyside Single Malt",Gordon & MacPhail,Speyside,UK
@@ -5994,7 +5994,7 @@ age,vintage,bottled,avp,size,price,name,bottling,bottler,loc/type,country
 31.0,1976.0,2007.0,52.40%,700,1723.8300000000004,Ardbeg Single Cask,"Original Bottling, Islay Single Malt",Original Bottling,Islay,UK
 23.0,1991.0,2014.0,48.90%,700,610.5,Ardbeg,"Malts of Scotland, Islay Single Malt",Malts of Scotland,Islay,UK
 10.0,1994.0,2004.0,40.00%,700,125.43,Ardbeg Connoisseurs Choice,"Gordon & MacPhail, Islay Single Malt",Gordon & MacPhail,Islay,UK
-8.0,1997.0,2005.0,58.80%,700,72.15,Argyll The Old Matl Cask,"Douglas Laing,  Single Malt",Douglas Laing,Single,u
+8.0,1997.0,2005.0,58.80%,700,72.15,Argyll The Old Matl Cask,"Douglas Laing,  Single Malt",Douglas Laing,Single,UK
 16.0,1995.0,2011.0,53.50%,700,259.74,Arran Malt and Music Festival 2017,"Original Bottling, Islands Single Malt",Original Bottling,Islands,UK
 17.0,1996.0,2013.0,55.70%,700,149.85000000000005,Arran Private Cask,"Original Bottling, Islands Single Malt",Original Bottling,Islands,UK
 16.0,1997.0,2013.0,50.20%,700,194.25000000000003,Arran Malt & Music Festival 2013,"Original Bottling, Islands Single Malt",Original Bottling,Islands,UK
