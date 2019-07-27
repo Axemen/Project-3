@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,300,300i,400,400i,700,700i,900,900i">
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i"
+        rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Vast+Shadow:100,100i,300,300i,400,400i,700,700i,900,900i"
+        rel="stylesheet">
+    <style>
+        .banner {
+            color: white;
+            padding-top: 6rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #181818;
+            max-width: 100%;
+            background: linear-gradient(rgba(45, 0, 0, 0.45),
+                    rgba(45, 0, 0, 0.817)),
+                    url("/assets/images/alcohol-background-bar-301692_1.jpg");
+                /* url("https://images.pexels.com/photos/301692/pexels-photo-301692.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260"); */
+            height: auto;
+            min-height:30rem;
+            /* Create the parallax scrolling effect */
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+
+        }
+
+
+
+        .banner-content {
+            max-width: 1170px;
+            margin: 2rem auto;
+            color: white;
+        }
+
+        .content {
+            margin: 2rem auto;
+            max-width: 1170px;
+        }
+
+        .svg_font {
+           font-family: Vast Shadow;
+           font-size: 8rem;
+           color: white;
+           fill: white;
+           opacity: 0.5;
+           z-index: 99;
+        }
+
+        h1 {
+            font-family: Montserrat, Helvetica, Arial, sans-serif;
+            font-size: 32px;
+            font-style: normal;
+            font-weight: normal;
+            letter-spacing: 3px;
+            line-height: 26px;
+            text-transform: uppercase;
+        }
+        h2 {
+            font-family: Montserrat, Helvetica, Arial, sans-serif;
+            font-size: 30px;
+            font-style: normal;
+            font-weight: normal;
+            letter-spacing: 3px;
+            line-height: 26px;
+            text-transform: uppercase;
+        }
+
+        h4 {
+            font-family: Lato, 'Times New Roman', serif;
+            font-size: 19px;
+            font-style: italic;
+            font-weight: normal;
+            letter-spacing: normal;
+            line-height: 30px;
+            text-transform: none;
+        }
+
+        p {
+            font-family: Lato, 'Times New Roman', serif;
+            font-size: 19px;
+            font-style: normal;
+            font-weight: normal;
+            letter-spacing: normal;
+            line-height: 2em;
+            text-transform: none;
+        }
+
+        a {
+            /* font-family: Montserrat, 'Times New Roman', serif; */
+            /* font-size: 14px; */
+            font-style: normal;
+            font-weight: bold;
+            letter-spacing: normal;
+            line-height: 2em;
+            text-transform: none;
+            color: #3e1f08;
+        }
+        a.mini_link {
+            font-family: Montserrat, 'Times New Roman', serif;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: normal;
+            letter-spacing: normal;
+            line-height: 2em;
+            text-transform: none;
+            color: #fff;
+        }
+
+        a:hover {
+            /* font-family: Montserrat, 'Times New Roman', serif; */
+            /* font-size: 14px; */
+            /* font-style: normal; */
+            font-weight: bold;
+            /* letter-spacing: normal; */
+            /* line-height: 2em; */
+            /* text-transform: none; */
+            color: #000000;
+        }
+
+        .nav-item,
+        .nav-link {
+            color: #fff;
+            font-family: Montserrat, 'Times New Roman', serif;
+
+        }
+
+        #GH_logo {
+            opacity: 0.5;
+        }
+
+        div.sticky {
+            position: -webkit-sticky;
+            position: sticky;
+            top: 50%;
+            /* right: 0; */
+            background-color: none;
+           color: #3e1f08;
+text-align: left;
+            white-space: nowrap;
+            font-size: 20px;
+        }
+
+        .rotate {
+            transform: rotate(-90deg);
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+
+        }
+/* .blank {
+    height: 100%;
+    width: 100%;
+} */
+
+    </style>
+    <title>Whisky River</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#"><img class="logo-main-inverted" src=""></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#s_1">SECTION 1</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#s_2">SECTION 2</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#s_3">SECTION 3</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#s_4">SECTION 4</a>
+                    </li>
+                    <li>
+                        <a target="#_blank" href="https://github.com/Axemen/project-3" style="padding-left:20px;">
+                            <img id="GH_logo" width="32px" src="/assets/images/GitHub-Mark-Light-32px.png">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="banner">
+
+        <div class="banner-content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        
+                        <h1>The Whisky Project</h1>
+                        <h4>Looking at words & numbers with whisky</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec dolor non urna
+                            pellentesque mattis. Curabitur elementum venenatis nisl in tristique. Lorem ipsum dolor sit
+                            amet, consectetur adipiscing elit. Sed finibus nunc ut magna luctus finibus. Sed consequat
+                            ligula laoreet sodales placerat. Phasellus euismod felis ipsum, vitae porttitor velit
+                            ullamcorper sit amet. Aenean in ex libero.</p>
+                            
+                        <a class="mini_link">GET STARTED <span>&#8594;</span></a>
+                        
+                    </div>
+                    <div class="col-md-6">
+                        <!-- <img src="https://via.placeholder.com/528x400.png"> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+   
+    <div class="container">
+            <div class="row">
+                <div class="col-md-1" style="margin-top: 0; margin-left:0;">
+                    <!-- <div class="blank"></div> -->
+    <div class="sticky rotate"><h4 style="margin-top: 180px;"><span>&#8213;</span>The Whisky Project<span>&#8213;</span></h4></div></div>
+                
+                <div class="col-md-11" style="padding-left: 4rem;">
+
+    <div class="content">
+        <h2>The Data</h2>
+        <h4>scraping and cleaning</h4>
+        <p>To begin this project, we sought out a valid source for whisky reviews, one that not only held a comprehenisve and diverse catalog of whiskys but also supplied information on each in a consistent manner. After searching through a few options, we settled on using <a href="http://whiskyadvocate.com/" target="_blank">Whisky Advocate</a> as the main data source for the following points: distillery, label, year, age, style, category, review points and description. </p>
+    </div>
+    <div class="content">
+            <h2>The Words</h2>
+            <h4>breaking down the descriptions</h4>
+
+            <p>Other Content Will Go Here</p>
+        </div>
+    <div class="content">
+            <h2>The Numbers</h2>
+            <h4>trending the review points</h4>
+
+            <p>Other Content Will Go Here</p>
+    
+    </div>
+    <div class="content">
+            <h2>Putting It All Together</h2>
+            <h4>making sense of it all</h4>
+
+            <p>Other Content Will Go Here</p>
+        </div>
+    <div class="content">
+        <p>Other Content Will Go Here</p>
+    </div>
+    <div class="content">
+        <p>Other Content Will Go Here</p>
+    </div>
+    <div class="content">
+        <p>Other Content Will Go Here</p>
+    </div>
+    <div class="content" style="height: 2400px;">
+        <p>Other Content Will Go Here</p>
+    </div>
+</div></div></div>
+<footer class="py-3">
+        <div class="container">
+
+            <p class="m-0 text-center text-black small">Kurt Held, Frederik De Buyker, Devynn Moreno, Jonathan Randolph, Elsa Schieffelin 
+            </p>
+            <p class="m-0 text-center text-black small">Rice University Data Analytics Boot Camp | August 2019</p>
+        </div>
+        <!-- /.container -->
+    </footer>
+</body>
+
+</html>
