@@ -298,7 +298,7 @@ html {
 #ghBtn {
     display: none;
     position: fixed;
-    background: url('../static/images/GitHub-Mark-32px.png');
+    background: url('../images/GitHub-Mark-32px.png');
     background-repeat: no-repeat;
   background-size: auto;
   background-position: center; 
