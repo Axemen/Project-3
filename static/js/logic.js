@@ -45702,7 +45702,7 @@ L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
 L.geoJson(countryData).addTo(myMap);
 
 
-d3.csv('static/data/weather_whiskey Jul23.csv', function (data) {
+d3.csv('../static/data/weather_whiskey Jul23.csv', function (data) {
     var country_list = [];
     var geos = []
     data.forEach(function (d) {
@@ -45731,11 +45731,12 @@ d3.csv('static/data/weather_whiskey Jul23.csv', function (data) {
     for (var i = 0; i < country_freq[0].length; i++) {
         countryData.features.forEach(function (d) {
             if (country_freq[0][i] == d.id) {
-                d.properties["count"] = country_freq[1][i]
-                count_range.push(d.properties["count"])
+                d.properties["count"] = country_freq[1][i];
+                count_range.push(d.properties["count"]);
+                console.log(d.properties['name']);
             }
             else {
-                // d.properties["count"].push(0)
+                //d.properties["count"].push(0)
             }
         })
 
@@ -45767,7 +45768,6 @@ d3.csv('static/data/weather_whiskey Jul23.csv', function (data) {
     }
     function highlightFeature(e) {
         var layer = e.target;
-
         layer.setStyle({
             weight: 2,
             color: '#666',
@@ -45787,10 +45787,12 @@ d3.csv('static/data/weather_whiskey Jul23.csv', function (data) {
     }
 
     function zoomToFeature(e) {
-        map.fitBounds(e.target.getBounds());
+        var layer = e.target;
+        myMap.fitBounds(layer.getBounds());
+        layer.bindPopup("<strong>Country Name: </strong>" + " " + layer.feature.properties.name+ "<br><strong>Whiskey Count:</strong>" + " " + layer.feature.properties.count + "</br>");
     }
 
-    function onEachFeature(feature, layer) {
+    function onEachFeature(feature, layer, d) {
         layer.on({
             mouseover: highlightFeature,
             mouseout: resetHighlight,
@@ -45814,7 +45816,7 @@ d3.csv('static/data/weather_whiskey Jul23.csv', function (data) {
     country_selected="Country Here";
 
     info.update = function () {
-        this._div.innerHTML = '<div style="background: rgba(255,255,255,.5); padding: 1.2em; line-height: 1.2;"><h4> Whiskeys Around the Globe </h4>'+country_selected+'<br><p>Hover over a country</div>';
+        this._div.innerHTML = '<div style="background: rgba(255,255,255,.5); padding: 1.2em; line-height: 1.2;"><h4> Whiskeys Around the Globe </h4>'+country_selected+'<br><p>Click on a Country</div>';
 
         };
 
