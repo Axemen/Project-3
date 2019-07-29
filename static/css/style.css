@@ -10,11 +10,9 @@ html {
             max-width: 100%;
             background: linear-gradient(rgba(45, 0, 0, 0.45),
                     rgba(45, 0, 0, 0.817)),
-                url("/assets/images/alcohol-background-bar-301692_1.jpg");
-            /* url("https://images.pexels.com/photos/301692/pexels-photo-301692.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260"); */
+                url("../static/images/alcohol-background-bar-301692_1.jpg");
             height: auto;
             min-height: 30rem;
-            /* Create the parallax scrolling effect */
             background-attachment: fixed;
             background-position: center;
             background-repeat: no-repeat;
@@ -300,7 +298,7 @@ html {
 #ghBtn {
     display: none;
     position: fixed;
-    background: url('../../assets/images/GitHub-Mark-32px.png');
+    background: url('../static/images/GitHub-Mark-32px.png');
     background-repeat: no-repeat;
   background-size: auto;
   background-position: center; 

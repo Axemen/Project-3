@@ -42,7 +42,7 @@ $(document).ready(function () {
     $('.dataTables_length').addClass('bs-select');
 });
 
-d3.csv("../../TextReviewOverview.csv", function (data) {
+d3.csv("static/data/TextReviewOverview.csv", function (data) {
     // var parsedCSV = d3.csvParseRows(data);
     var parsedCSV = data;
     // console.log(parsedCSV)
@@ -85,7 +85,7 @@ d3.csv("../../TextReviewOverview.csv", function (data) {
 
 
 });
-d3.csv("../clean-data/Whiskey_data/table_test_set.csv", function (data) {
+d3.csv("static/data/table_test_set.csv", function (data) {
     makeTable("#data-table", data, ['Maker', 'review score', 'price', "style", "country", "description"]);
 
 });

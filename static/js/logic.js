@@ -45702,7 +45702,7 @@ L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
 L.geoJson(countryData).addTo(myMap);
 
 
-d3.csv('../clean-data/Whiskey_data/weather_whiskey Jul23.csv', function (data) {
+d3.csv('static/data/weather_whiskey Jul23.csv', function (data) {
     var country_list = [];
     var geos = []
     data.forEach(function (d) {
