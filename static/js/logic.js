@@ -45819,6 +45819,9 @@ d3.csv('../clean-data/Whiskey_data/weather_whiskey Jul23.csv', function (data) {
         };
 
     info.addTo(myMap);
+
+  
+
     let legend = L.control({
         position: 'bottomright'
     });

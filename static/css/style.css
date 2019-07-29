@@ -364,3 +364,8 @@ opacity: .25;
   .active_icon {
     /* background-color: #4CAF50; */
   }
+
+  .sidestick:hover {
+font-weight: bold;
+cursor: pointer;
+  }
