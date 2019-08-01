@@ -9,14 +9,13 @@
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-    <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> -->
-    <!-- <script type="text/javascript" charset="utf8" src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.19/js/dataTables.dataTables.js"></script> -->
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
     <!-- Bootstrap core CSS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
     <!-- Material Design Bootstrap -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.7/css/mdb.min.css" rel="stylesheet">
+    
     <script src="https://d3js.org/d3.v4.min.js"></script>
 
     <!--Leaflet-->
@@ -35,7 +34,6 @@
     <link href="https://fonts.googleapis.com/css?family=Vast+Shadow:100,100i,300,300i,400,400i,700,700i,900,900i"
         rel="stylesheet">
 
-    <!-- <link rel="stylesheet" href="../static/css/jquery.css"> -->
 
     <link rel="stylesheet" href="../static/css/style.css">
 
@@ -117,7 +115,7 @@
                     <h2>Whiskey</h2>
                     <h4>defining the product</h4>
                     <p>Whisky is a distilled alcoholic beverage
-                            made from a fermented grain mash. Whisky are aged in wooden casks (barrels) and must have a
+                            made from a fermented grain mash. Whiskey is aged in wooden casks (barrels) and must have a
                             minimum of alcohol by volume (ABV) of 40%. Whiskey can be made from a variety of these
                             different grains including; corn, rye, barley, wheat, sorghum. The type and percentage of
                             grains used in the distillation mash that determine the style/type of whiskey, e.g., single
@@ -303,17 +301,8 @@
             <h2 id="model">So what style should you get?</h2>                
             <h4>depends on what you're looking for</h4>
             <p>Using vectorized descriptions, the model below predicts the which style of whiskey the description most resembles.</p>
-            <div class="col-md-3" style="float: left;">
-            <form role="form" method='POST' action = '/predict'>
-                    <div class="form-group">
-                        <input type="text" name="url" class="form-control" id="url-box" placeholder="Enter descriptors..."
-                            style="max-width: 300px;" autofocus required>
-                    </div>
-                    <button type="submit" class="btn btn-style">Submit</button>
-                </form>
-            </div>
-            <div class="col-md-6" style="float:right;"></div>
-                <h4>Your best bet is  {{text}} .</h4>
+           <button class='btn'><a style="color: white" href="https://thewhiskeyproject.herokuapp.com/model">FIND A WHISKEY FOR YOU</a></button>
+
               
                 
         </div>
