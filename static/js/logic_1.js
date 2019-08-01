@@ -42,23 +42,17 @@ $(document).ready(function () {
     $('.dataTables_length').addClass('bs-select');
 });
 
-d3.csv("static/data/TextReviewOverview.csv", function (data) {
+d3.csv("../static/data/TextReviewOverview.csv", function (data) {
     // var parsedCSV = d3.csvParseRows(data);
     var parsedCSV = data;
-    // console.log(parsedCSV)
     var logRows = [];
     var rfRows = [];
     var nbmRows = [];
     var nbbRows = [];
     var svmRows = [];
-    // console.log(parsedCSV[0].Model);
     for (i = 0; i < parsedCSV.length; i++) {
         if (parsedCSV[i].Model == "Logistic Regression") {
-
-
             logRows.push(parsedCSV[i]);
-
-
         }
         if (parsedCSV[i].Model == "Random Forest") {
             rfRows.push(parsedCSV[i]);

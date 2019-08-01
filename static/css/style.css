@@ -367,3 +367,36 @@ opacity: .25;
 font-weight: bold;
 cursor: pointer;
   }
+
+
+
+	.node {
+		cursor: pointer;
+	}
+
+	.node circle {
+	  fill: rgba(23, 104, 165, 0.817);
+	  stroke: rgba(23, 104, 165, 0.817);
+	  stroke-width: 3px;
+	}
+
+	
+
+.node text {
+  font: 10px sans-serif;
+}
+
+.node--internal circle {
+  fill: rgba(23, 104, 165, 0.817);
+}
+
+.node--internal text {
+  text-shadow: 0 1px 0 #fff, 0 -1px 0 #fff, 1px 0 0 #fff, -1px 0 0 #fff;
+}
+
+.link {
+  fill: none;
+  stroke: rgb(69, 75, 87);
+  stroke-opacity: 0.4;
+  stroke-width: 1.5px;
+}

@@ -45733,7 +45733,6 @@ d3.csv('../static/data/weather_whiskey Jul23.csv', function (data) {
             if (country_freq[0][i] == d.id) {
                 d.properties["count"] = country_freq[1][i];
                 count_range.push(d.properties["count"]);
-                console.log(d.properties['name']);
             }
             else {
                 //d.properties["count"].push(0)
@@ -45742,7 +45741,6 @@ d3.csv('../static/data/weather_whiskey Jul23.csv', function (data) {
 
     }
     count_range = count_range.sort()
-    //    console.log(count_range);
 
     function getColor(d) {
         return d > 2000 ? '#800026' :
@@ -45857,4 +45855,4 @@ d3.csv('../static/data/weather_whiskey Jul23.csv', function (data) {
 }
 )
     ;
-    // console.log(countryData)
+  
