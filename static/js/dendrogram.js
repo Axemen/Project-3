@@ -1,10 +1,10 @@
-var margin = { top: 120, right: 120, bottom: 120, left: 120 };
+var margin = { top: 120, right: 120, bottom: 10, left: 120 };
 
 
 var svg = d3.select("svg.dend"),
    
     width = 500 + margin.left + margin.right,
-    height = 500 + margin.top + margin.bottom,
+    height = 600 + margin.top + margin.bottom,
     g = svg.append("g").attr("transform", "translate(" + (width / 2 + 100) + "," + (height / 2 + 90) + ")");
 
 var stratify = d3.stratify()
