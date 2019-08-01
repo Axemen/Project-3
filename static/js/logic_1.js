@@ -75,7 +75,7 @@ d3.csv("../static/data/TextReviewOverview.csv", function (data) {
 
   
 d3.csv("../static/data/Whiskey_Advocate_All_scraped_KHupdate-23_Jul_(Team_Style_Defined)_with_descriptions.csv", function (data) {
-    makeTable("#data-table_", data, ['Maker', 'Review Score', 'Price', 'Main Style', 'country', 'descriptions']).attr("class", "testing table table-striped table-bordered table-sm");
+    makeTable("#data-table_", data, ['Maker', 'Review Score', 'Price', 'Main Style', 'country', 'descriptions']).attr("class", "testing table table-striped table-bordered table-sm").attr("id","data-table_");
     
 });
 
@@ -84,10 +84,28 @@ d3.csv("../static/data/Whiskey_Advocate_All_scraped_KHupdate-23_Jul_(Team_Style_
 function searchDescriptions() {
     var input = document.getElementById("keyWord");
     var filter = input.value.toUpperCase();
-    var table = document.getElementById("testing");
+    var table = document.getElementById("data-table_");
     var tr = table.getElementsByTagName("tr");
     for (i = 0; i < tr.length; i++) {
         var td = tr[i].getElementsByTagName("td")[5];
+        if (td) {
+            txtValue = td.textContent || td.innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                tr[i].style.display = "";
+            } else {
+                tr[i].style.display = "none";
+            }
+        }
+    };
+}
+
+function searchNames() {
+    var input = document.getElementById("keyWord");
+    var filter = input.value.toUpperCase();
+    var table = document.getElementById("data-table_");
+    var tr = table.getElementsByTagName("tr");
+    for (i = 0; i < tr.length; i++) {
+        var td = tr[i].getElementsByTagName("td")[1];
         if (td) {
             txtValue = td.textContent || td.innerText;
             if (txtValue.toUpperCase().indexOf(filter) > -1) {
@@ -103,10 +121,10 @@ function searchDescriptions() {
 function updateTable() {
     var input = document.getElementById("keyWord");
     var filter = input.value.toUpperCase();
-    var table = document.getElementById("testing");
+    var table = document.getElementById("data-table_");
     var tr = table.getElementsByTagName("tr");
     for (i = 0; i < tr.length; i++) {
-        td = tr[i].getElementsByTagName("td")[1];
+        td = tr[i].getElementsByTagName("td")[5];
         if (td) {
             txtValue = td.textContent || td.innerText;
             if (txtValue.toUpperCase().indexOf(filter) > -1) {
