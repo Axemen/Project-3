@@ -15,7 +15,7 @@ def home():
 def model():
     errors = []
     results = []
-    user_input = 'input something'
+    user_input = '______'
     if request.method == 'POST':
         try: 
             user_input = request.form['user_input']
