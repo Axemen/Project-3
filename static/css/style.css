@@ -408,3 +408,30 @@ cursor: pointer;
 .paginate_button {
     padding: 0 4px 0 4px;
 }
+
+
+#table-wrapper {
+    position:relative;
+  }
+  #data-table_ {
+    height:450px;
+    overflow:auto;  
+    margin-top:20px;
+  }
+  #table-wrapper table {
+    width:100%;
+  
+  }
+  
+  #table-wrapper table thead th .text {
+    position:absolute;   
+    top:-20px;
+    z-index:2;
+    height:20px;
+    width:35%;
+    border:1px solid black;
+  }
+
+  .active{
+      opacity: 1 !important;
+  }

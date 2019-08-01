@@ -34,19 +34,9 @@ function makeTable(selected_id, data, columns) {
         .text(function (d) { return d.value; });
 
     return table;
+   
 }
-$(document).ready(function () {
-    $('#data-table table').DataTable({
-        "lengthMenu": [[5, 10, 20, -1], [5, 10, 20, "All"]],
-        "ordering": false,
-        buttons: [
-            'colvis',
-            'excel',
-            'print'
-        ]
-    });
-    $('.dataTables_length').addClass('bs-select');
-});
+
 
 d3.csv("../static/data/TextReviewOverview.csv", function (data) {
     // var parsedCSV = d3.csvParseRows(data);
@@ -73,7 +63,7 @@ d3.csv("../static/data/TextReviewOverview.csv", function (data) {
             svmRows.push(parsedCSV[i]);
         }
     };
-
+    
 
 
 
@@ -86,14 +76,15 @@ d3.csv("../static/data/TextReviewOverview.csv", function (data) {
 
 });
 d3.csv("../static/data/Whiskey_Advocate_All_scraped_KHupdate-23_Jul_(Team_Style_Defined)_with_descriptions.csv", function (data) {
-    makeTable("#data-table", data, ['Maker', 'Review Score', 'Price', 'Main Style', 'country', 'descriptions']);
-
+    makeTable("#data-table_", data, ['Maker', 'Review Score', 'Price', 'Main Style', 'country', 'descriptions']).attr("class", "testing table table-striped table-bordered table-sm");
+    
 });
-
+table= d3.select("#data-table_").selectAll("table");
+console.log(table);
 function searchDescriptions() {
     var input = document.getElementById("keyWord");
     var filter = input.value.toUpperCase();
-    var table = document.getElementById("data-table");
+    var table = document.getElementById("testing");
     var tr = table.getElementsByTagName("tr");
     for (i = 0; i < tr.length; i++) {
         var td = tr[i].getElementsByTagName("td")[5];
@@ -112,7 +103,7 @@ function searchDescriptions() {
 function updateTable() {
     var input = document.getElementById("keyWord");
     var filter = input.value.toUpperCase();
-    var table = document.getElementById("data-table");
+    var table = document.getElementById("testing");
     var tr = table.getElementsByTagName("tr");
     for (i = 0; i < tr.length; i++) {
         td = tr[i].getElementsByTagName("td")[1];
@@ -144,3 +135,22 @@ function topFunction() {
     document.documentElement.scrollTop = 0;
   }
 
+//   var delayInMilliseconds = 50000; //1 second
+
+//   addMDB(function() {
+    //your code to be executed after 1 second
+ 
+  $(document).ready(function () {
+      $('.testing').DataTable({
+          "lengthMenu": [[5, 10, 20, -1], [5, 10, 20, "All"]],
+          "ordering": true,
+          "paging": true
+
+      });
+    //   $('#data-table').addClass('bs-select');
+
+        // $('.testing').addClass('bs-select');
+  });
+// }, delayInMilliseconds);
+
+// addMDB();
