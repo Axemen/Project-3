@@ -400,3 +400,11 @@ cursor: pointer;
   stroke-opacity: 0.4;
   stroke-width: 1.5px;
 }
+
+.leaflet-popup-content {
+    width: auto !important;
+}
+
+.paginate_button {
+    padding: 0 4px 0 4px;
+}

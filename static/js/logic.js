@@ -45787,7 +45787,7 @@ d3.csv('../static/data/weather_whiskey Jul23.csv', function (data) {
     function zoomToFeature(e) {
         var layer = e.target;
         myMap.fitBounds(layer.getBounds());
-        layer.bindPopup("<strong>Country Name: </strong>" + " " + layer.feature.properties.name+ "<br><strong>Whiskey Count:</strong>" + " " + layer.feature.properties.count + "</br>");
+        layer.bindPopup("<strong>Country Name: </strong>" + " " + layer.feature.properties.name+ "<br><strong>Whiskey Count:</strong>" + " " + layer.feature.properties.count + "</br>"+ "<img src='../static/images/"+String(layer.feature.id)+"_wc.png' style='margin:0px !important' >");
     }
 
     function onEachFeature(feature, layer, d) {
@@ -45814,7 +45814,7 @@ d3.csv('../static/data/weather_whiskey Jul23.csv', function (data) {
     country_selected="Country Here";
 
     info.update = function () {
-        this._div.innerHTML = '<div style="background: rgba(255,255,255,.5); padding: 1.2em; line-height: 1.2;"><h4> Whiskeys Around the Globe </h4>'+country_selected+'<br><p>Click on a Country</div>';
+        this._div.innerHTML = '<div style="background: rgba(255,255,255,.5); padding: 1.2em; line-height: 0.5;"><h5> Whiskeys Around the Globe </h5>'+'<br><h5 style="line-height: 0.2; font-style: italic">Click on a Country</h5>';
 
         };
 
