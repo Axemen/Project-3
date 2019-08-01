@@ -83,7 +83,7 @@
                         <h4>Looking at words & numbers with whiskey</h4><br>
                         <p>Through machine learning, text analysis and correlation studies, we investigate whether trends, patterns or key learnings are present in a sampling of whiskey review data.</p>
 
-                        <a class="mini_link">GET STARTED <span>&#8594;</span></a>
+                        <a class="mini_link" href="https://github.com/Axemen/project-3" target="_blank">VIEW GITHUB <span>&#8594;</span></a>
 
                     </div>
                     <div class="col-md-6">
@@ -157,16 +157,16 @@
     
                         <div class="tabs_container">
                             <ul class="nav nav-pills fw_tabs">
-                                <li class="active tabs"><a data-toggle="pill" href="#menu1">Logistic Regression</a></li>
-                                <li class="tabs"><a data-toggle="pill" href="#menu2">Random Forest</a></li>
-                                <li class="tabs"><a data-toggle="pill" href="#menu3">Naive Bayes - Multinominal</a></li>
-                                <li class="tabs"><a data-toggle="pill" href="#menu4">Naive Bayes - Bernoulli</a></li>
-                                <li class="tabs"><a data-toggle="pill" href="#menu5">Support Vector Machine</a></li>
+                                <li class="actives tabs"><a data-toggle="pill" href="#menu1" onclick=toggleClass()>Logistic Regression</a></li>
+                                <li class="tabs" ><a data-toggle="pill" href="#menu2" onclick=toggleClass()>Random Forest</a></li>
+                                <li class="tabs" ><a data-toggle="pill" href="#menu3" onclick=toggleClass()>Naive Bayes - Multinominal</a></li>
+                                <li class="tabs" ><a data-toggle="pill" href="#menu4" onclick=toggleClass()>Naive Bayes - Bernoulli</a></li>
+                                <li class="tabs" ><a data-toggle="pill" href="#menu5" onclick=toggleClass()>Support Vector Machine</a></li>
     
                             </ul>
     
                             <div class="tab-content">
-                                <div id="menu1" class="tab-pane fade in active">
+                                <div id="menu1" class="tab-pane in">
                                     <div id="text_review_log" class="table table-striped table-bordered table-sm"></div>
                                 </div>
                                 <div id="menu2" class="tab-pane fade">
@@ -312,7 +312,6 @@
         </div>
         <!-- /.container -->
     </footer>
-<<<<<<< HEAD
     <!-- JQuery -->
 
     <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
@@ -327,20 +326,10 @@
     <!-- MDB core JavaScript -->
     <script type="text/javascript"
         src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.7/js/mdb.min.js"></script>
+        <script src="../static/js/config.js"></script>
     <script src="../static/js/logic.js"></script>
     <script src="../static/js/logic_1.js"></script>
     <script src="../static/js/dendrogram.js"></script>
-=======
-    <script src="../static/js/config.js"></script>
-    <script src="../static/js/logic.js"></script>
-    <script src="../static/js/logic_1.js"></script>
-    <script src="../static/js/dendrogram.js"></script>
-   
-<!-- MDB core JavaScript -->
-<script type="text/javascript"
-    src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.7/js/mdb.min.js"></script>
-    <script src="//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" type="text/javascript"></script>
->>>>>>> 711b00f78a6264fd5dfe1a8db1f8d2fad0c0f927
 
 
 

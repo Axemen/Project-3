@@ -37,7 +37,6 @@ function makeTable(selected_id, data, columns) {
    
 }
 
-
 d3.csv("../static/data/TextReviewOverview.csv", function (data) {
     // var parsedCSV = d3.csvParseRows(data);
     var parsedCSV = data;
@@ -63,10 +62,6 @@ d3.csv("../static/data/TextReviewOverview.csv", function (data) {
             svmRows.push(parsedCSV[i]);
         }
     };
-    
-
-
-
     makeTable("#text_review_log", logRows, ['Feature', 'Full_Data', 'Q1_Q2', "Q2_Q3", "Q1", "Q2", "Q3", "Q4"]);
     makeTable("#text_review_rf", rfRows, ['Feature', 'Full_Data', 'Q1_Q2', "Q2_Q3", "Q1", "Q2", "Q3", "Q4"]);
     makeTable("#text_review_nbb", nbbRows, ['Feature', 'Full_Data', 'Q1_Q2', "Q2_Q3", "Q1", "Q2", "Q3", "Q4"]);
@@ -75,12 +70,17 @@ d3.csv("../static/data/TextReviewOverview.csv", function (data) {
 
 
 });
+
+
+
+  
 d3.csv("../static/data/Whiskey_Advocate_All_scraped_KHupdate-23_Jul_(Team_Style_Defined)_with_descriptions.csv", function (data) {
     makeTable("#data-table_", data, ['Maker', 'Review Score', 'Price', 'Main Style', 'country', 'descriptions']).attr("class", "testing table table-striped table-bordered table-sm");
     
 });
-table= d3.select("#data-table_").selectAll("table");
-console.log(table);
+
+
+
 function searchDescriptions() {
     var input = document.getElementById("keyWord");
     var filter = input.value.toUpperCase();
@@ -130,6 +130,12 @@ function scrollFunction() {
     }
 }
 
+function toggleClass() {
+    d3.selectAll(".tabs").attr("class", "tabs");
+    d3.selectAll(this).attr("class", "tabs actives");
+
+}
+
 function topFunction() {
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
@@ -140,17 +146,17 @@ function topFunction() {
 //   addMDB(function() {
     //your code to be executed after 1 second
  
-  $(document).ready(function () {
-      $('.testing').DataTable({
-          "lengthMenu": [[5, 10, 20, -1], [5, 10, 20, "All"]],
-          "ordering": true,
-          "paging": true
+//   $(document).ready(function () {
+//       $('.testing').DataTable({
+//           "lengthMenu": [[5, 10, 20, -1], [5, 10, 20, "All"]],
+//           "ordering": true,
+//           "paging": true
 
-      });
-    //   $('#data-table').addClass('bs-select');
+//       });
+//     //   $('#data-table').addClass('bs-select');
 
-        // $('.testing').addClass('bs-select');
-  });
+//         // $('.testing').addClass('bs-select');
+//   });
 // }, delayInMilliseconds);
 
 // addMDB();

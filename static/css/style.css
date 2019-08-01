@@ -165,7 +165,16 @@ html {
             padding: auto;
             font-weight: 300;
         }
-
+.tabs a:hover {
+    font-weight:bold;
+    text-decoration: underline;
+    color: white;
+}
+.tabs a:focus {
+    font-weight: bold;
+    text-decoration: underline;
+    color:white;
+}
         .tabs_container {
             width: 100%;
             height: auto;
@@ -199,50 +208,7 @@ html {
 
         }
 
-        .nav-pills>li>a {
-            border-radius: 0px;
-
-        }
-
-        li>a:focus {
-            border-radius: 0px;
-            background: gray;
-            color: black;
-        }
-
-        li>a:hover {
-            border-radius: 0px;
-            background: gray;
-            color: black;
-        }
-
-        .nav-pills>li.active>a,
-        .nav-pills>li.active>a:focus,
-        .nav-pills>li.active>a:hover {
-            color: white;
-            font-weight: bold;
-            background: black;
-            text-decoration: underline;
-            border-radius: 0px;
-        }
-
-        .nav-pills>li.active {
-            color: black;
-            font-weight: bold;
-            background: black;
-        }
-
-        .nav-pills>li.active:hover {
-            color: black;
-            font-weight: bold;
-            background: black;
-        }
-
-        li.tabs:hover {
-            background: black;
-
-        }
-
+      
         table.dataTable thead .sorting:after,
         table.dataTable thead .sorting:before,
         table.dataTable thead .sorting_asc:after,
@@ -432,6 +398,51 @@ cursor: pointer;
     border:1px solid black;
   }
 
-  .active{
-      opacity: 1 !important;
-  }
+  .nav-pills>li>a {
+    border-radius: 0px;
+
+}
+
+li>a:focus {
+    border-radius: 0px;
+    background: gray;
+    color: black;
+}
+
+li>a:hover {
+    border-radius: 0px;
+    background: gray;
+    color: black;
+}
+
+.nav-pills>li.active>a,
+.nav-pills>li.active>a:focus,
+.nav-pills>li.active>a:hover {
+    color: white;
+    font-weight: bold;
+    background: black;
+    text-decoration: underline;
+    border-radius: 0px;
+}
+
+.nav-pills>li.active {
+    color: black;
+    font-weight: bold;
+    background: black;
+}
+
+.nav-pills>li.active:hover {
+    color: black;
+    font-weight: bold;
+    background: black;
+}
+
+li.tabs:hover {
+    background: black;
+
+}
+
+.actives:hover {
+    font-weight: bold;
+    text-decoration: underline;
+}
