@@ -458,3 +458,7 @@ button.btn-style {
     color: white !important;
     background: black !important;
 }
+
+.center {
+    text-align: center;
+}
