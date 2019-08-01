@@ -5,6 +5,19 @@ import numpy as np
 
 
 app = Flask(__name__)
+<<<<<<< HEAD
+=======
+
+def load_keras_model():
+    """Load in the pre-trained model"""
+    global keras_model
+    keras_model = load_model('static/models/keras_model.h5')
+    keras_model._make_predict_function()
+    global vectorizer
+    # with open('static/models/tfidf.pickle', 'rb') as f:
+    #     vectorizer = pickle.load(f)
+
+>>>>>>> 6cb8d841a753c309f45b707bde68c49475c2da88
     
 
     
@@ -49,7 +62,10 @@ def predict():
                   'Craft Whisky']
     with open('static/models/tfidf.pickle', 'rb') as f:
         vectorizer = pickle.load(f)
+<<<<<<< HEAD
 
+=======
+>>>>>>> 6cb8d841a753c309f45b707bde68c49475c2da88
     keras_model = load_model('static/models/keras_model.h5')
     keras_model._make_predict_function()
     
@@ -61,4 +77,8 @@ def predict():
     return render_template('model.html', text = output)
 
 if __name__ == "__main__":
+<<<<<<< HEAD
+=======
+    # load_keras_model()
+>>>>>>> 6cb8d841a753c309f45b707bde68c49475c2da88
     app.run()
