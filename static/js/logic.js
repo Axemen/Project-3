@@ -45710,7 +45710,7 @@ d3.csv('../static/data/weather_whiskey Jul23.csv', function (data) {
         countryData.features.forEach(function (c) {
         if (c.id == d['iso_3']) {
             c.properties['score'] = d['avg review score'];
-            console.log(c.properties)
+            // console.log(c.properties)
         }
         });
     })
