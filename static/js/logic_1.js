@@ -34,31 +34,21 @@ function makeTable(selected_id, data, columns) {
         .text(function (d) { return d.value; });
 
     return table;
+   
 }
-$(document).ready(function () {
-    $('#data-table table').DataTable({
-        "ordering": false
-    });
-    $('.dataTables_length').addClass('bs-select');
-});
 
-d3.csv("static/data/TextReviewOverview.csv", function (data) {
+
+d3.csv("../static/data/TextReviewOverview.csv", function (data) {
     // var parsedCSV = d3.csvParseRows(data);
     var parsedCSV = data;
-    // console.log(parsedCSV)
     var logRows = [];
     var rfRows = [];
     var nbmRows = [];
     var nbbRows = [];
     var svmRows = [];
-    // console.log(parsedCSV[0].Model);
     for (i = 0; i < parsedCSV.length; i++) {
         if (parsedCSV[i].Model == "Logistic Regression") {
-
-
             logRows.push(parsedCSV[i]);
-
-
         }
         if (parsedCSV[i].Model == "Random Forest") {
             rfRows.push(parsedCSV[i]);
@@ -73,7 +63,7 @@ d3.csv("static/data/TextReviewOverview.csv", function (data) {
             svmRows.push(parsedCSV[i]);
         }
     };
-
+    
 
 
 
@@ -85,21 +75,19 @@ d3.csv("static/data/TextReviewOverview.csv", function (data) {
 
 
 });
-d3.csv("static/data/table_test_set.csv", function (data) {
-    makeTable("#data-table", data, ['Maker', 'review score', 'price', "style", "country", "description"]);
-
+d3.csv("../static/data/Whiskey_Advocate_All_scraped_KHupdate-23_Jul_(Team_Style_Defined)_with_descriptions.csv", function (data) {
+    makeTable("#data-table_", data, ['Maker', 'Review Score', 'Price', 'Main Style', 'country', 'descriptions']).attr("class", "testing table table-striped table-bordered table-sm");
+    
 });
-
+table= d3.select("#data-table_").selectAll("table");
+console.log(table);
 function searchDescriptions() {
-    // Declare variables 
     var input = document.getElementById("keyWord");
     var filter = input.value.toUpperCase();
-    var table = document.getElementById("data-table");
+    var table = document.getElementById("testing");
     var tr = table.getElementsByTagName("tr");
-    // Loop through all table rows, and hide those who don't match the search query
     for (i = 0; i < tr.length; i++) {
         var td = tr[i].getElementsByTagName("td")[5];
-        // console.log(td);
         if (td) {
             txtValue = td.textContent || td.innerText;
             if (txtValue.toUpperCase().indexOf(filter) > -1) {
@@ -108,22 +96,15 @@ function searchDescriptions() {
                 tr[i].style.display = "none";
             }
         }
-    }
+    };
 }
 
 
 function updateTable() {
-    // var input, filter;
-
-    // var input, filter, table, tr, td, i, txtValue;
     var input = document.getElementById("keyWord");
     var filter = input.value.toUpperCase();
-    var table = document.getElementById("data-table");
+    var table = document.getElementById("testing");
     var tr = table.getElementsByTagName("tr");
-    // console.log(input);
-    // console.log(filter);
-    // console.log(table);
-    // console.log(tr);
     for (i = 0; i < tr.length; i++) {
         td = tr[i].getElementsByTagName("td")[1];
         if (td) {
@@ -134,7 +115,7 @@ function updateTable() {
                 tr[i].style.display = "none";
             }
         }
-    }
+    };
 
 
 }
@@ -154,3 +135,22 @@ function topFunction() {
     document.documentElement.scrollTop = 0;
   }
 
+//   var delayInMilliseconds = 50000; //1 second
+
+//   addMDB(function() {
+    //your code to be executed after 1 second
+ 
+  $(document).ready(function () {
+      $('.testing').DataTable({
+          "lengthMenu": [[5, 10, 20, -1], [5, 10, 20, "All"]],
+          "ordering": true,
+          "paging": true
+
+      });
+    //   $('#data-table').addClass('bs-select');
+
+        // $('.testing').addClass('bs-select');
+  });
+// }, delayInMilliseconds);
+
+// addMDB();

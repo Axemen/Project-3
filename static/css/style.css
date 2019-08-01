@@ -298,7 +298,7 @@ html {
 #ghBtn {
     display: none;
     position: fixed;
-    background: url('../static/images/GitHub-Mark-32px.png');
+    background: url('../images/GitHub-Mark-32px.png');
     background-repeat: no-repeat;
   background-size: auto;
   background-position: center; 
@@ -366,4 +366,72 @@ opacity: .25;
   .sidestick:hover {
 font-weight: bold;
 cursor: pointer;
+  }
+
+
+
+	.node {
+		cursor: pointer;
+	}
+
+	.node circle {
+	  fill: rgba(23, 104, 165, 0.817);
+	  stroke: rgba(23, 104, 165, 0.817);
+	  stroke-width: 3px;
+	}
+
+	
+
+.node text {
+  font: 10px sans-serif;
+}
+
+.node--internal circle {
+  fill: rgba(23, 104, 165, 0.817);
+}
+
+.node--internal text {
+  text-shadow: 0 1px 0 #fff, 0 -1px 0 #fff, 1px 0 0 #fff, -1px 0 0 #fff;
+}
+
+.link {
+  fill: none;
+  stroke: rgb(69, 75, 87);
+  stroke-opacity: 0.4;
+  stroke-width: 1.5px;
+}
+
+.leaflet-popup-content {
+    width: auto !important;
+}
+
+.paginate_button {
+    padding: 0 4px 0 4px;
+}
+
+
+#table-wrapper {
+    position:relative;
+  }
+  #data-table_ {
+    height:450px;
+    overflow:auto;  
+    margin-top:20px;
+  }
+  #table-wrapper table {
+    width:100%;
+  
+  }
+  
+  #table-wrapper table thead th .text {
+    position:absolute;   
+    top:-20px;
+    z-index:2;
+    height:20px;
+    width:35%;
+    border:1px solid black;
+  }
+
+  .active{
+      opacity: 1 !important;
   }
