@@ -301,17 +301,8 @@
             <h2 id="model">So what style should you get?</h2>                
             <h4>depends on what you're looking for</h4>
             <p>Using vectorized descriptions, the model below predicts the which style of whiskey the description most resembles.</p>
-            <div class="col-md-3" style="float: left;">
-            <form role="form" method='POST' action = '/predict'>
-                    <div class="form-group">
-                        <input type="text" name="url" class="form-control" id="url-box" placeholder="Enter descriptors..."
-                            style="max-width: 300px;" autofocus required>
-                    </div>
-                    <button type="submit" class="btn btn-style">Submit</button>
-                </form>
-            </div>
-            <div class="col-md-6" style="float:right;"></div>
-                <h4>Your best bet is  {{text}} .</h4>
+           <button class='btn'><a style="color: white" href="https://thewhiskeyproject.herokuapp.com/model">FIND A WHISKEY FOR YOU</a></button>
+
               
                 
         </div>
