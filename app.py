@@ -12,8 +12,8 @@ def load_keras_model():
     keras_model = load_model('static/models/keras_model.h5')
     keras_model._make_predict_function()
     global vectorizer
-    with open('static/models/tfidf.pickle', 'rb') as f:
-        vectorizer = pickle.load(f)
+    # with open('static/models/tfidf.pickle', 'rb') as f:
+    #     vectorizer = pickle.load(f)
 
     
 
@@ -57,6 +57,10 @@ def predict():
                   'Rye Whisky',
                   'White Whisky',
                   'Craft Whisky']
+    with open('static/models/tfidf.pickle', 'rb') as f:
+        vectorizer = pickle.load(f)
+    keras_model = load_model('static/models/keras_model.h5')
+    keras_model._make_predict_function()
     
     v_input = vectorizer.transform([user_input])
     predictions = keras_model.predict(v_input)
@@ -66,5 +70,5 @@ def predict():
     return render_template('model.html', text = output)
 
 if __name__ == "__main__":
-    load_keras_model()
+    # load_keras_model()
     app.run()
