@@ -67,7 +67,7 @@ def predict():
     max_index = np.argmax(predictions)
     output = categories[max_index]
 
-    return render_template('index.html/#model', text = output)
+    return render_template('model.html', text = output)
 
 if __name__ == "__main__":
     # load_keras_model()
