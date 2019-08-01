@@ -45697,7 +45697,7 @@ L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
     attribution: "Map data &copy; <a href=\"https://www.openstreetmap.org/\">OpenStreetMap</a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA</a>, Imagery © <a href=\"https://www.mapbox.com/\">Mapbox</a>",
     maxZoom: 18,
     id: "mapbox.light",
-    accessToken: 'pk.eyJ1IjoiZW1zMTgiLCJhIjoiY2p3aWZmM3IyMjIycjQ5cXIzNnIxaGVoYiJ9.YcHfDScynwJ3CfGqTFf7Lw'
+    accessToken: API_KEY
 }).addTo(myMap);
 L.geoJson(countryData).addTo(myMap);
 
@@ -45707,9 +45707,12 @@ d3.csv('../static/data/weather_whiskey Jul23.csv', function (data) {
     var geos = []
     data.forEach(function (d) {
         country_list.push(d["iso_3"])
-    })
-
-    countryData.features.forEach(function (d) {
+        countryData.features.forEach(function (c) {
+        if (c.id == d['iso_3']) {
+            c.properties['score'] = d['avg review score'];
+            console.log(c.properties)
+        }
+        });
     })
     function counter(arr) {
         var a = [], b = [], prev;
@@ -45733,10 +45736,12 @@ d3.csv('../static/data/weather_whiskey Jul23.csv', function (data) {
             if (country_freq[0][i] == d.id) {
                 d.properties["count"] = country_freq[1][i];
                 count_range.push(d.properties["count"]);
+                
             }
             else {
                 //d.properties["count"].push(0)
             }
+
         })
 
     }
@@ -45784,17 +45789,16 @@ d3.csv('../static/data/weather_whiskey Jul23.csv', function (data) {
         info.update();
     }
 
-    function zoomToFeature(e) {
+    function PopUp(e) {
         var layer = e.target;
-        myMap.fitBounds(layer.getBounds());
-        layer.bindPopup("<strong>Country Name: </strong>" + " " + layer.feature.properties.name+ "<br><strong>Whiskey Count:</strong>" + " " + layer.feature.properties.count + "</br>"+ "<img src='../static/images/"+String(layer.feature.id)+"_wc.png' style='margin:0px !important' >");
+        layer.bindPopup("<strong>Country Name: </strong>" + " " + layer.feature.properties.name+ "<br><strong>Whiskey Count:</strong>" + " " + layer.feature.properties.count + "</br><strong>Average Review Score:</strong>" + " " + layer.feature.properties.score + "<br><img src='../static/images/"+String(layer.feature.id)+"_wc.png' style='margin:0px !important' ></br>");
     }
 
     function onEachFeature(feature, layer, d) {
         layer.on({
             mouseover: highlightFeature,
             mouseout: resetHighlight,
-            click: zoomToFeature
+            click: PopUp
         });
     }
     var geojson = L.geoJson(countryData, {
