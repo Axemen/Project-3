@@ -19,7 +19,26 @@ html {
             background-size: cover;
 
         }
+        .banner_1 {
+            color: white;
+            padding-top: 6rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #181818;
+            max-width: 100%;
+            background-image: 
+                url("../images/alcohol-background-bar-301692.jpg");
+            /* background: linear-gradient(rgba(8, 0, 52, 0.45),
+                    rgba(0, 1, 45, 0.817)),
+                url("../images/alcohol-background-bar-301692_1.jpg"); */
+            height: auto;
+            filter: grayscale(50%);
+            min-height: 30rem;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
 
+        }
 
 
         .banner-content {
