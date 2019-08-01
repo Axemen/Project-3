@@ -1,41 +1,34 @@
 from flask import Flask, jsonify, render_template, send_file, request
-from wtforms import Form, TextField, validators, SubmitField, DecimalField, IntegerField
 from keras.models import load_model
-
+import pickle
+import numpy as np
 
 
 app = Flask(__name__)
 
-class ReusableForm(Form):
-    """User entry form for entering specifics for generation"""
-    # Starting seed
-    # seed = TextField("Enter a seed string or 'random':", validators=[
-    #                  validators.InputRequired()])
-    # Diversity of predictions
-    # diversity = DecimalField('Enter diversity:', default=0.8, validators=[validators.InputRequired(), validators.NumberRange(min=0.5, max=5.0, message='Diversity must be between 0.5 and 5.')])
-    # Number of words
-    words = IntegerField('Enter number of words to generate:', default=50, validators=[validators.InputRequired(), validators.NumberRange(min=10, max=100, message='Number of words must be between 10 and 100')])
-    # Submit button
-    submit = SubmitField("Enter")
-
 def load_keras_model():
     """Load in the pre-trained model"""
     global keras_model
-    keras_model = load_model('../models/train-embeddings-rnn.h5')
-    # Required for model to work
-    # global graph
-    # graph = tf.get_default_graph()
+    keras_model = load_model('static/models/keras_model.h5')
+    keras_model._make_predict_function()
+    global vectorizer
+    with open('static/models/tfidf.pickle', 'rb') as f:
+        vectorizer = pickle.load(f)
+
+    
+
+    
 
 # render out an index page
 @app.route("/")
 def home():
     return render_template("index.html")
 
-@app.route("/model", methods=['GET', 'POST'])
+@app.route("/model", methods = ['POST', 'GET'])
 def model():
     errors = []
     results = []
-
+    user_input = 'input something'
     if request.method == 'POST':
         try: 
             user_input = request.form['user_input']
@@ -43,9 +36,35 @@ def model():
         except Exception as e:
             errors.append("it didn't work...")
 
-        
-    return render_template('model.html', errors = errors, results = results)
+    # prediction = session['prediction']
+    return render_template('model.html', errors = errors, results = results, text = user_input)
 
+@app.route('/predict', methods = ['POST', 'GET'])
+def predict():
+    user_input = request.form.get('url')
+    categories = ['Single Malt Scotch',
+                  'Flavored Whiskey and Liqueurs',
+                  'Bourbon',
+                  ' Blended Malt Scotch Whisky ',
+                  'Blended Scotch Whisky',
+                  'Blended Whiskey (Multi-country)',
+                  ' Single Malt Whisky (Multi-country)',
+                  ' Single Grain Whisky (Multi-country)',
+                  'Japan',
+                  ' Canada',
+                  'Irish',
+                  'Generic Whisky (Multi-country)',
+                  'Rye Whisky',
+                  'White Whisky',
+                  'Craft Whisky']
+    
+    v_input = vectorizer.transform([user_input])
+    predictions = keras_model.predict(v_input)
+    max_index = np.argmax(predictions)
+    output = categories[max_index]
+
+    return render_template('model.html', text = output)
 
 if __name__ == "__main__":
+    load_keras_model()
     app.run()
