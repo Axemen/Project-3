@@ -133,7 +133,6 @@ function scrollFunction() {
 function toggleClass() {
     d3.selectAll(".tabs").attr("class", "tabs");
     d3.selectAll(this).attr("class", "tabs actives");
-
 }
 
 function topFunction() {
