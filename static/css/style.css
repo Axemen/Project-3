@@ -447,6 +447,12 @@ li.tabs:hover {
     text-decoration: underline;
 }
 
+button.btn {
+    border-radius: none !important;
+    color: white !important;
+    background: black !important;
+}
+
 button.btn-style {
     border-radius: none !important;
     color: white !important;
