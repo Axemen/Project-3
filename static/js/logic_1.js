@@ -37,7 +37,13 @@ function makeTable(selected_id, data, columns) {
 }
 $(document).ready(function () {
     $('#data-table table').DataTable({
-        "ordering": false
+        "lengthMenu": [[5, 10, 20, -1], [5, 10, 20, "All"]],
+        "ordering": false,
+        buttons: [
+            'colvis',
+            'excel',
+            'print'
+        ]
     });
     $('.dataTables_length').addClass('bs-select');
 });
@@ -79,21 +85,18 @@ d3.csv("../static/data/TextReviewOverview.csv", function (data) {
 
 
 });
-d3.csv("static/data/table_test_set.csv", function (data) {
-    makeTable("#data-table", data, ['Maker', 'review score', 'price', "style", "country", "description"]);
+d3.csv("../static/data/Whiskey_Advocate_All_scraped_KHupdate-23_Jul_(Team_Style_Defined)_with_descriptions.csv", function (data) {
+    makeTable("#data-table", data, ['Maker', 'Review Score', 'Price', 'Main Style', 'country', 'descriptions']);
 
 });
 
 function searchDescriptions() {
-    // Declare variables 
     var input = document.getElementById("keyWord");
     var filter = input.value.toUpperCase();
     var table = document.getElementById("data-table");
     var tr = table.getElementsByTagName("tr");
-    // Loop through all table rows, and hide those who don't match the search query
     for (i = 0; i < tr.length; i++) {
         var td = tr[i].getElementsByTagName("td")[5];
-        // console.log(td);
         if (td) {
             txtValue = td.textContent || td.innerText;
             if (txtValue.toUpperCase().indexOf(filter) > -1) {
@@ -102,22 +105,15 @@ function searchDescriptions() {
                 tr[i].style.display = "none";
             }
         }
-    }
+    };
 }
 
 
 function updateTable() {
-    // var input, filter;
-
-    // var input, filter, table, tr, td, i, txtValue;
     var input = document.getElementById("keyWord");
     var filter = input.value.toUpperCase();
     var table = document.getElementById("data-table");
     var tr = table.getElementsByTagName("tr");
-    // console.log(input);
-    // console.log(filter);
-    // console.log(table);
-    // console.log(tr);
     for (i = 0; i < tr.length; i++) {
         td = tr[i].getElementsByTagName("td")[1];
         if (td) {
@@ -128,7 +124,7 @@ function updateTable() {
                 tr[i].style.display = "none";
             }
         }
-    }
+    };
 
 
 }
