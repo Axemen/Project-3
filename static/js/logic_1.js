@@ -31,10 +31,11 @@ function makeTable(selected_id, data, columns) {
         })
         .enter()
         .append('td')
-        .text(function (d) { return d.value; });
+        .text(function (d) { return d.value; })
+
 
     return table;
-   
+
 }
 
 d3.csv("../static/data/TextReviewOverview.csv", function (data) {
@@ -62,21 +63,21 @@ d3.csv("../static/data/TextReviewOverview.csv", function (data) {
             svmRows.push(parsedCSV[i]);
         }
     };
-    makeTable("#text_review_log", logRows, ['Feature', 'Full_Data', 'Q1_Q2', "Q2_Q3", "Q1", "Q2", "Q3", "Q4"]);
-    makeTable("#text_review_rf", rfRows, ['Feature', 'Full_Data', 'Q1_Q2', "Q2_Q3", "Q1", "Q2", "Q3", "Q4"]);
-    makeTable("#text_review_nbb", nbbRows, ['Feature', 'Full_Data', 'Q1_Q2', "Q2_Q3", "Q1", "Q2", "Q3", "Q4"]);
-    makeTable("#text_review_nbm", nbmRows, ['Feature', 'Full_Data', 'Q1_Q2', "Q2_Q3", "Q1", "Q2", "Q3", "Q4"]);
-    makeTable("#text_review_svm", svmRows, ['Feature', 'Full_Data', 'Q1_Q2', "Q2_Q3", "Q1", "Q2", "Q3", "Q4"]);
+    makeTable("#text_review_log", logRows, ['Feature', 'Full_Data', 'Q1_Q2', "Q2_Q3", "Q1", "Q2", "Q3", "Q4"]).attr("id", "table_1");
+    makeTable("#text_review_rf", rfRows, ['Feature', 'Full_Data', 'Q1_Q2', "Q2_Q3", "Q1", "Q2", "Q3", "Q4"]).attr("id", "table_2");
+    makeTable("#text_review_nbb", nbbRows, ['Feature', 'Full_Data', 'Q1_Q2', "Q2_Q3", "Q1", "Q2", "Q3", "Q4"]).attr("id", "table_3");
+    makeTable("#text_review_nbm", nbmRows, ['Feature', 'Full_Data', 'Q1_Q2', "Q2_Q3", "Q1", "Q2", "Q3", "Q4"]).attr("id", "table_4");
+    makeTable("#text_review_svm", svmRows, ['Feature', 'Full_Data', 'Q1_Q2', "Q2_Q3", "Q1", "Q2", "Q3", "Q4"]).attr("id", "table_5");
 
 
 });
 
 
 
-  
+
 d3.csv("../static/data/Whiskey_Advocate_All_scraped_KHupdate-23_Jul_(Team_Style_Defined)_with_descriptions.csv", function (data) {
-    makeTable("#data-table_", data, ['Maker', 'Review Score', 'Price', 'Main Style', 'country', 'descriptions']).attr("class", "testing table table-striped table-bordered table-sm");
-    
+    makeTable("#data-table_", data, ['Maker', 'Review Score', 'Price', 'Main Style', 'country', 'descriptions']).attr("class", "testing table table-striped table-bordered table-sm").attr("id", "data-table_");
+
 });
 
 
@@ -84,10 +85,28 @@ d3.csv("../static/data/Whiskey_Advocate_All_scraped_KHupdate-23_Jul_(Team_Style_
 function searchDescriptions() {
     var input = document.getElementById("keyWord");
     var filter = input.value.toUpperCase();
-    var table = document.getElementById("testing");
+    var table = document.getElementById("data-table_");
     var tr = table.getElementsByTagName("tr");
     for (i = 0; i < tr.length; i++) {
         var td = tr[i].getElementsByTagName("td")[5];
+        if (td) {
+            txtValue = td.textContent || td.innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                tr[i].style.display = "";
+            } else {
+                tr[i].style.display = "none";
+            }
+        }
+    };
+}
+
+function searchNames() {
+    var input = document.getElementById("keyWord");
+    var filter = input.value.toUpperCase();
+    var table = document.getElementById("data-table_");
+    var tr = table.getElementsByTagName("tr");
+    for (i = 0; i < tr.length; i++) {
+        var td = tr[i].getElementsByTagName("td")[1];
         if (td) {
             txtValue = td.textContent || td.innerText;
             if (txtValue.toUpperCase().indexOf(filter) > -1) {
@@ -103,10 +122,10 @@ function searchDescriptions() {
 function updateTable() {
     var input = document.getElementById("keyWord");
     var filter = input.value.toUpperCase();
-    var table = document.getElementById("testing");
+    var table = document.getElementById("data-table_");
     var tr = table.getElementsByTagName("tr");
     for (i = 0; i < tr.length; i++) {
-        td = tr[i].getElementsByTagName("td")[1];
+        td = tr[i].getElementsByTagName("td")[5];
         if (td) {
             txtValue = td.textContent || td.innerText;
             if (txtValue.toUpperCase().indexOf(filter) > -1) {
@@ -138,24 +157,6 @@ function toggleClass() {
 function topFunction() {
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
-  }
+}
 
-//   var delayInMilliseconds = 50000; //1 second
 
-//   addMDB(function() {
-    //your code to be executed after 1 second
- 
-//   $(document).ready(function () {
-//       $('.testing').DataTable({
-//           "lengthMenu": [[5, 10, 20, -1], [5, 10, 20, "All"]],
-//           "ordering": true,
-//           "paging": true
-
-//       });
-//     //   $('#data-table').addClass('bs-select');
-
-//         // $('.testing').addClass('bs-select');
-//   });
-// }, delayInMilliseconds);
-
-// addMDB();

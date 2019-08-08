@@ -1,14 +1,11 @@
 from flask import Flask, jsonify, render_template, send_file, request
 from keras.models import load_model
+from keras import backend as K
 import pickle
 import numpy as np
 
 
 app = Flask(__name__)
-    
-
-    
-
 # render out an index page
 @app.route("/")
 def home():
@@ -18,7 +15,7 @@ def home():
 def model():
     errors = []
     results = []
-    user_input = 'input something'
+    user_input = '______'
     if request.method == 'POST':
         try: 
             user_input = request.form['user_input']
@@ -26,7 +23,6 @@ def model():
         except Exception as e:
             errors.append("it didn't work...")
 
-    # prediction = session['prediction']
     return render_template('model.html', errors = errors, results = results, text = user_input)
 
 @app.route('/predict', methods = ['POST', 'GET'])
@@ -49,10 +45,9 @@ def predict():
                   'Craft Whisky']
     with open('static/models/tfidf.pickle', 'rb') as f:
         vectorizer = pickle.load(f)
-
+    K.clear_session()
     keras_model = load_model('static/models/keras_model.h5')
     keras_model._make_predict_function()
-    
     v_input = vectorizer.transform([user_input])
     predictions = keras_model.predict(v_input)
     max_index = np.argmax(predictions)
@@ -61,4 +56,5 @@ def predict():
     return render_template('model.html', text = output)
 
 if __name__ == "__main__":
+    # load_keras_model()
     app.run()
